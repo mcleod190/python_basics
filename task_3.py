@@ -1,3 +1,5 @@
+__author__ = 'dima masliukovski'
+
 #Реализовать склонение слова процент для чисел до 20
 
 for i in range(1,20):

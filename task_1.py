@@ -1,3 +1,5 @@
+__author__ = 'dima masliukovski'
+
 duration = int(input('Enter duration in seconds > '))
 print("Duration = ", duration)
 
