@@ -7,7 +7,7 @@ temp_file = DATABASE + '.tmp'
 def main(argv):
     if not len(argv) == 3:
         print(f'Wrong number of arguments. Expected: 2, given: {len(argv) - 1}.')
-        exit(1)
+        return 1
     else:
         record_number = int(argv[1])
         value = argv[2]
