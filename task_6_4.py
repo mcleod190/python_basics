@@ -8,9 +8,14 @@ from itertools import zip_longest
 def smart_strip(line):
     return line.strip() if line else ''
 
-with open('users.csv', 'r', encoding='utf-8') as users_file, \
-    open('hobby.csv', 'r', encoding='utf-8') as hobbies_file, \
-    open('users_hobby.txt', 'w', encoding='utf-8') as result_file:
-    for u, h in zip_longest(users_file, hobbies_file):
-        user = u.strip()
-        result_file.write(f'{smart_strip(u)}: {smart_strip(h)}\n')
+
+def process_files(users_file, hobbies_file, result_file):
+    with open(users_file, 'r', encoding='utf-8') as users_file, \
+        open(hobbies_file, 'r', encoding='utf-8') as hobbies_file, \
+        open(result_file, 'w', encoding='utf-8') as result_file:
+        for u, h in zip_longest(users_file, hobbies_file):
+            user = u.strip()
+            result_file.write(f'{smart_strip(u)}: {smart_strip(h)}\n')
+
+if __name__ == '__main__':
+    process_files('users.csv', 'hobby.csv', 'users_hobby.txt')
